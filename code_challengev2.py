@@ -9,10 +9,10 @@ th = money%1000
 #five hundred
 five= int(thou/500)
 print("500 =", five)
-five= money%500
+fie= money%500
 
 #two hundred
-two= int(five/200)
+two= int(fie/200)
 print("200 =", two)
 tw = money%200
 
