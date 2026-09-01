@@ -1,37 +1,43 @@
-#code challenge no.2
-#Example bank deposit
+money = int(input("Enter amount to deposit ==> "))
 
-money = 6438
+print(" ============== PH PESO DENOMINATION BREAK DOWN ===============")
+print("Current money is ==> ", money, "php")
 
-print("Money to deposit -->", money)
+libo = money // 1000
+libo_sukli = money % 1000
 
-#Money to deposit 
-thousand = money//1000
-money = money - thousand*1000
-fivehundred = money//500
-money = money - fivehundred*500
-twohundred = money//200
-money = money -  twohundred*200
-hundred = money//100
-money = money - hundred*100
-fifty = money//50
-money = money - fifty*50
-twenty = money//20
-money = money - twenty*20
-ten = money//10
-money = money - ten*10
-five = money//5
-money = money - five*5
-one = money//1
-money = money - one*1
+five_h = libo_sukli // 500
+five_sukli = libo_sukli % 500
 
-print("You have ", thousand,"of ", "1k")
-print("You have ", fivehundred,"of ", "500")
-print("You have ", twohundred,"of ", "200")
-print("You have ", hundred,"of ", "100")
-print("You have ", fifty,"of ", "50")
-print("You have ", twenty,"of ", "20")
-print("You have ", ten,"of ", "10")
-print("You have ", five,"of ", "5")
-print("You have ", one,"of ", "1")
+two_h = five_sukli //200
+two_sukli = five_sukli % 200
 
+one_h = two_sukli // 100
+one_sukli = two_sukli % 100
+
+fifty = one_sukli // 50
+fifty_sukli = one_sukli % 50
+
+twenty = fifty_sukli // 20
+twenty_sukli = fifty_sukli % 20
+
+ten = twenty_sukli // 10
+ten_sukli = twenty_sukli % 10
+
+five = ten_sukli // 5
+five_sukli = ten_sukli % 5
+
+one = five_sukli // 1
+one_sukli = five_sukli % 1
+
+print("1000 - ", libo)
+print(" 500 - ", five_h)
+print(" 200 - ", two_h)
+print(" 100 - ", one_h)
+print("  50 - ", fifty)
+print("  20 - ", twenty)
+print("  10 - ", ten)
+print("   5 - ", five)
+print("   1 - ", one)
+
+ 
