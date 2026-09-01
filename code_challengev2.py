@@ -1,47 +1,47 @@
-money = 4372
-print("Withdraw amount:", money)
+money = int(input("Enter the amount to withdraw: "))
 
-#Thousand
-thou= int(money/1000)
+print("\nWithdraw amount:", money)
+
+# Thousand
+thou = money // 1000
 print("1000 =", thou)
-th = money%1000
+th = money % 1000
 
-#five hundred
-five= int(thou/500)
+# Five hundred
+five = th // 500
 print("500 =", five)
-fie= money%500
+fie = th % 500
 
-#two hundred
-two= int(fie/200)
+# Two hundred
+two = fie // 200
 print("200 =", two)
-tw = money%200
+tw = fie % 200
 
-#one hundred
-one= int(tw/100)
+# One hundred
+one = tw // 100
 print("100 =", one)
-on= money%100
+on = tw % 100
 
-#fifty
-fif = int(on/50)
+# Fifty
+fif = on // 50
 print("50 =", fif)
-ft = money%50
+ft = on % 50
 
-#twenty
-twe = int(ft/20)
+# Twenty
+twe = ft // 20
 print("20 =", twe)
-tn = money%20
+tn = ft % 20
 
-#ten
-ten = int(tn/10)
+# Ten
+ten = tn // 10
 print("10 =", ten)
-te = money%10
+te = tn % 10
 
-#fives
-fiv = int(te/5)
+# Five
+fiv = te // 5
 print("5 =", fiv)
-f = money%5
+f = te % 5
 
-#piso
-one = int(f/1)
-print("1 =", one)
-ps = money%1
+# One peso
+one_peso = f // 1
+print("1 =", one_peso)
