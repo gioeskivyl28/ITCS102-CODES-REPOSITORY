@@ -10,13 +10,13 @@ if age >= 21 and is_employed == True:
 else:
     print("Rejected: Fails baseline criteria")
 
-if credit_score >= 750:# Tier 1
+if credit_score >= 750: # Tier 1
         base_rate = 5.0
         if annual_income >= 100000:
             base_rate = 4.5
         print("Loyalty discount. Final rate is:", base_rate, "%")
 
-elif credit_score >= 600 and credit_score < 750:# Tier 2
+elif credit_score >= 600 and credit_score < 750: #Tier 2
     base_rate = 8.0
     if has_collateral == True:
             base_rate = 7.0
@@ -24,7 +24,7 @@ elif credit_score >= 600 and credit_score < 750:# Tier 2
             base_rate = 9.5
     print("Approved at", base_rate, "%")
 
-else:# Tier 3 
+else: #Tier 3 
     if credit_score < 600:
         print("Rejected: Credit score too low")
         #bituin ng mindanao
