@@ -3,7 +3,7 @@ age = int(input("Enter your age\n--> "))
 is_employed = input("Are you employed? (yes/no)\n--> ").strip().lower() == "yes"
 credit_score = int(input("Enter your credit score: \n--> "))
 annual_income = float(input("Enter your annual income\n--> "))
-has_collateral = input("Do you have collateral? (yes/no)\n--> ").strip().lower() == "yes"
+has_collateral = input("Do you have collateral? (True/false)\n--> ")
 
 if age >= 21 and is_employed:
     print("You are eligible to apply for a loan")
