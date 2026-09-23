@@ -1,30 +1,41 @@
 #rene
-age = int(input("Enter your age \n-->"))
-is_employed = bool(eval(input("Are you employed? (True/False) \n -->")))
-credit_score = int(input("Enter your credit score: \n-->"))
-annual_income = float(input("Enter your annual income \n-->"))
-has_collateral = bool(eval(input("Do you have collateral? (True/False) \n-->")))
+age = int(input("Enter your age\n--> "))
+is_employed = input("Are you employed? (yes/no)\n--> ").strip().lower() == "yes"
+credit_score = int(input("Enter your credit score: \n--> "))
+annual_income = float(input("Enter your annual income\n--> "))
+has_collateral = input("Do you have collateral? (yes/no)\n--> ").strip().lower() == "yes"
 
-if age >= 21 and is_employed == True:
+if age >= 21 and is_employed:
     print("You are eligible to apply for a loan")
-else:
-    print("Rejected: Fails baseline criteria")
 
-if credit_score >= 750: # Tier 1
+    base_rate = None
+
+    if credit_score >= 750:
         base_rate = 5.0
+        print("Tier 1. Base rate is:", base_rate, "%")
         if annual_income >= 100000:
-            base_rate = 4.5
-        print("Loyalty discount. Final rate is:", base_rate, "%")
+            base_rate -= 0.5
+            print("Loyalty discount applied. Final rate is:", base_rate, "%")
 
-elif credit_score >= 600 and credit_score < 750: #Tier 2
-    base_rate = 8.0
-    if has_collateral == True:
-            base_rate = 7.0
-    elif annual_income < 40000:
-            base_rate = 9.5
-    print("Approved at", base_rate, "%")
+    elif 600 <= credit_score < 750:
+        base_rate = 8.0
+        print("Tier 2. Base rate is:", base_rate, "%")
+        if has_collateral:
+            base_rate -= 1.0
+            print("Collateral discount applied. Final rate is:", base_rate, "%")
+        elif annual_income < 40000:
+            base_rate += 1.5
+            print("Low income surcharge applied. Final rate is:", base_rate, "%")
 
-else: #Tier 3 
-    if credit_score < 600:
+    else:
         print("Rejected: Credit score too low")
-        #bituin ng mindanao
+
+    if base_rate is not None:
+        print("Approved at", base_rate, "%")
+
+else:
+    print("Not eligible to apply for a loan (must be 21+ and employed)")
+
+print("Thank you for using our software")
+
+#bituin ng mindanao
