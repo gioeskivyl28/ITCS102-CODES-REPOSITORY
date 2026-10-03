@@ -34,7 +34,7 @@ if age >= 21 and years >= 2.0 and has_defaults == False:
 			print(f"Your max loan is: {max_loan}")
 			print(f"Your base fee rate is: {fee_rate}% ")
 			print(f"Your base fee is: {base_fee} ")
-			print(f"Your Final Processing Fee: {final_fee} %")
+			print(f"Your Final Processing Fee: {final_fee}%")
 			print(f"Thank you for using our machine {gender} {name} ")
 	#tier 2
 	elif cs >= 620 and cs < 720:
@@ -52,7 +52,7 @@ if age >= 21 and years >= 2.0 and has_defaults == False:
 			print(f"Your max loan is: {max_loan}")
 			print(f"Your base fee rate is: {fee_rate}% ")
 			print(f"Your base fee is: {base_fee} ")
-			print(f"Your Final Processing Fee: {final_fee} %")
+			print(f"Your Final Processing Fee: {final_fee}%")
 			print(f"Thank you for using our machine {gender} {name} ")
 		
 	#tier 3
