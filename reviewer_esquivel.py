@@ -30,11 +30,11 @@ if age >= 21 and years >= 2.0 and has_defaults == False:
 			final_fee = base_fee
 			if int(collateral_value) % 5000 != 0:
 				final_fee += 250
-			print("Approved")
+			print(f"Approved collateral: {collateral_name} with a value of {collateral_value}")
 			print(f"Your max loan is: {max_loan}")
 			print(f"Your base fee rate is: {fee_rate}% ")
 			print(f"Your base fee is: {base_fee} ")
-			print(f"Your Final Processing Fee: {final_fee}%")
+			print(f"Your Final Processing Fee: {final_fee} %")
 			print(f"Thank you for using our machine {gender} {name} ")
 	#tier 2
 	elif cs >= 620 and cs < 720:
@@ -48,11 +48,11 @@ if age >= 21 and years >= 2.0 and has_defaults == False:
 			final_fee = base_fee
 			if int(collateral_value) % 5000 != 0:
 				final_fee += 250
-			print("Approved")
+			print(f"Approved collateral: {collateral_name} with a value of {collateral_value}")
 			print(f"Your max loan is: {max_loan}")
 			print(f"Your base fee rate is: {fee_rate}% ")
 			print(f"Your base fee is: {base_fee} ")
-			print(f"Your Final Processing Fee: {final_fee}%")
+			print(f"Your Final Processing Fee: {final_fee} %")
 			print(f"Thank you for using our machine {gender} {name} ")
 		
 	#tier 3
