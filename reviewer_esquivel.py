@@ -40,9 +40,9 @@ if age >= 21 and years >= 2.0 and has_defaults == False:
 	elif cs >= 620 and cs < 720:
 		max_loan = 1.5 * rev
 		if years >= 5.0:
-			fee_rate = 2.0
+			fee_rate = 0.02
 		else:
-			fee_rate = 3.5
+			fee_rate = 0.035
 		if collateral_value >= max_loan:
 			base_fee = max_loan * fee_rate
 			final_fee = base_fee
