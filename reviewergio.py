@@ -1,61 +1,60 @@
-owner_age = int(input("enter owner age -->"))
-monthly_revenue = float(input("Monthly revenue -->"))
-credit_score = int(input("your credit score -->"))
-years_in_business = float(input("Your years in business -->"))
-has_defaults = bool(eval(input("Do you have defaults? (True/False) -->")))
-collateral_name = str(input("Your collateral name -->"))
-collateral_value = float(input("what's the value of your collateral? -->"))
+name = input("What's your name? \n--> ")
+age = int(input("Enter owner age: \n--> "))
+rev = float(input("Enter monthly revenue: \n--> "))
+cs = int(input("Enter credit score: \n--> "))
+years = float(input("your years in business: \n--> "))
+has_defaults = bool(eval(input("Do you have defaults (True or False): \n-- >")))
+collateral_name = str(input("Enter your collateral name: \n--> "))
+collateral_value = float(input("Your collateral value: \n--> "))
 
-ml = 0
-bf = 0
+max_loan = 0
+fee_rate = 0
+final_fee = 0
 
-if owner_age >= 21 and years_in_business >= 2.0 and has_defaults == False:
-    print("BASELINE PASSED")
-    #tier 1:
-    if credit_score >= 720:
-        ml = 3 * monthly_revenue
-        print("MAXIMUM LOANABLE AMOUNT IS SET TO", ml)
-        print("HIGH CREDIT SCORE")
-        if monthly_revenue >= 50000:
-            print("REVENUE HIGHER THAN 50K")
-            bf = ml * 0.015
-            print("BASE FEE IS SET TO", bf)
-        else:
-            bf = ml * 0.025
-            print("BASE FEE IS SET TO", bf)
-        if collateral_value >= ml:
-            print("Collateral", collateral_name, "with a value of", collateral_value, "is accepted")
-        else: 
-            print("rejected: insufficient collateral value for", collateral_name)
-        #surcharge
-        sfr
-        if collateral_value % 5000:
-            pass
-    #tier 2
-    elif 620 <= credit_score < 720:
-        print("Credit score within 620 and 720")
-        ml = monthly_revenue * 0.015
-        print("MAXIMUM LOANABLE AMOUNT IS SET TO", ml)
-        if years_in_business >= 5.0:
-            bf = 0.02
-            print("BASELINE FEE IS SET TO", bf)
-        else:
-            bf = 0.035
-            print("BASELINE FEE IS SET TO", bf)
-            if collateral_value >= ml:
-                print("collateral", collateral_name, "With a value of", collateral_value)
-            else: 
-                print("Rejected for the collateral value of collateral named", collateral_name)
-
-    #tier 3
-    elif credit_score < 620:
-        print("Rejected: Credit score is too low")
-#collateral and modulus fee rules part
-
-
-
-
+if age >= 21 and years >= 2.0 and has_defaults == False:
+	#tier 1
+	if cs >= 720:
+		max_loan = 3 * rev
+		if rev >= 50000:
+			fee_rate = 0.015
+		else:
+			fee_rate = 0.025
+		#collateral and modulus fee rules
+		if collateral_value >= max_loan:
+			base_fee = max_loan * fee_rate
+			final_fee = base_fee
+			if int(collateral_value) % 5000 != 0:
+				final_fee += 250
+			print("Approved")
+			print("Your max loan is:", max_loan)
+			print("Your base fee rate is:", fee_rate)
+			print("Your base fee is:", base_fee)
+			print("Your Final Processing Fee:", final_fee)
+			print("Thank you for using our machine Mr./ Ms.", name)
+	#tier 2
+	elif cs >= 620 and cs < 720:
+		max_loan = 1.5 * rev
+		if years >= 5.0:
+			fee_rate = 2.0
+		else:
+			fee_rate = 3.5
+		if collateral_value >= max_loan:
+			base_fee = max_loan * fee_rate
+			final_fee = base_fee
+			if int(collateral_value) % 5000 != 0:
+				final_fee += 250
+			print("Approved")
+			print("Your max loan is:", max_loan)
+			print("Your base fee rate is:", fee_rate)
+			print("Your base fee is:", base_fee)
+			print("Your Final Processing Fee:", final_fee)
+			print("Thank you for using our machine Mr./ Ms.", name)
+		
+	#tier 3
+	elif cs < 620:
+		print("Sorry your credit score is too low")
+		print("Thank you for using our software Mr./ Ms., name")
 
 
 else:
-    print("YOU'RE NOT QUALIFIED")
+	print("Rejected: Your are not eligible for applying for loan sorry Mr./ Ms.", name)
