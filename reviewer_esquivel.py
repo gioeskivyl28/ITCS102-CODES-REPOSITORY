@@ -58,7 +58,7 @@ if age >= 21 and years >= 2.0 and has_defaults == False:
 	#tier 3
 	elif cs < 620:
 		print("Sorry your credit score is too low")
-		print("Thank you for using our software {gender} {name} ")
+		print(f"Thank you for using our software {gender} {name} ")
 
 
 else:
