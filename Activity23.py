@@ -6,7 +6,7 @@ Drama = []
 Adventure = []
 
 while True:
-    ask = input("Do you watch movies? yes or no --> ").lower()
+    ask = input("Do you watch movies?  yes or no --> ").lower()
     
     if ask == "yes":
         print("These are the list of movie genre:\n1 - Action\n2 - Comedy\n3 - Romance\n4 - Horror\n5 - Drama\n6 - Adventure ")
